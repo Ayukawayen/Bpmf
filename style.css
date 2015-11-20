@@ -1,0 +1,95 @@
+* {
+	margin:0;
+	padding:0;
+	border-width:0;
+	
+	font-size:1rem;
+	
+	box-sizing:border-box;
+}
+
+html {
+	width:100%;
+}
+body {
+	max-width:1380px;
+	
+	padding:1rem 2rem;
+	margin:0 auto;
+}
+
+#單字注音 {
+	width:5rem;
+	height:3rem;
+	
+	line-height:1;
+	
+	padding:1rem 0 0 0;
+	margin:1rem auto;
+	
+	text-align:center;
+}
+
+article {
+	direction:rtl;
+	
+	margin:1rem 0;
+	text-align:center;
+	
+	cursor:default;
+}
+
+article >p {
+	display:inline-block;
+	
+	width:2rem;
+	padding:0.25rem 0.25rem;
+	
+	text-align:center;
+}
+
+article >p >span {
+	display:inline-block;
+	
+	line-height:1;
+	padding:0.25rem 0.25rem;
+}
+
+textarea {
+	display:inline-block;
+	
+	height:7rem;
+	padding:0.25rem 0.25rem;
+	margin:0.25rem 0;
+}
+textarea#文章 {
+	width:10rem;
+	min-width:25%;
+	max-width:100%;
+}
+textarea#文章注音 {
+	width:30rem;
+	min-width:70%;
+	max-width:100%;
+}
+
+
+
+body {
+	background-color:#c9f;
+	color:#000;
+}
+
+#單字注音 {
+	background-color:#0f0;
+	color:#000;
+}
+
+article >p >span:hover {
+	background-color:#0f0;
+}
+
+textarea {
+	background-color:#fff;
+	color:#999;
+}
