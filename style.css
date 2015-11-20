@@ -46,6 +46,7 @@ article >p {
 	padding:0.25rem 0.25rem;
 	
 	text-align:center;
+	vertical-align:top;
 }
 
 article >p >span {
