@@ -19,15 +19,26 @@ body {
 }
 
 #單字注音 {
-	width:5rem;
-	height:3rem;
+	width:4rem;
+	height:5rem;
 	
 	line-height:1;
 	
-	padding:1rem 0 0 0;
 	margin:1rem auto;
 	
+	font-family: "標楷體", DFKai-SB, "思源黑體", "Source Han Sans", "新細明體", PMingLiU, "細明體", MingLiU, sans-serif;
 	text-align:center;
+}
+
+#單字注音 >p {
+	display:inline-block;
+	
+	width:1rem;
+
+	vertical-align:middle;
+}
+#單字注音 >p.placeholder {
+	height:100%;
 }
 
 article {
@@ -35,6 +46,8 @@ article {
 	
 	margin:1rem 0;
 	text-align:center;
+	
+	font-family: "標楷體", DFKai-SB, "思源黑體", "Source Han Sans", "新細明體", PMingLiU, "細明體", MingLiU, sans-serif;
 	
 	cursor:default;
 }

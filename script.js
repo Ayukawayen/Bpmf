@@ -1,4 +1,4 @@
-﻿var artiBpmfs = '';
+﻿var artiBpmfs = [];
 
 onArticleChange();
 onArtiBpmfChange();
@@ -37,13 +37,40 @@ function onArticleChange(e) {
 	
 }
 function onArtiBpmfChange(e) {
-	artiBpmfs = document.querySelector('#文章注音').value.trim().split(/\s+/);
+	var buf = document.querySelector('#文章注音').value.trim().split(/\s+/);
+	
+	artiBpmfs = [];
+	for(var i=0;i<buf.length;++i) {
+		var c = buf[i].substr(buf[i].length-1);
+		if(c=='ˊ' || c=='ˇ' || c=='ˋ') {
+			artiBpmfs.push({
+				chara:buf[i].substr(0, buf[i].length-1),
+				tone:c,
+			});
+		}
+		else if(buf[i].substr(0, 1) == '˙') {
+			artiBpmfs.push({
+				chara:buf[i]+'　',
+				tone:' ',
+			});
+		}
+		else {
+			artiBpmfs.push({
+				chara:buf[i],
+				tone:' ',
+			});
+		}
+	}
 }
 
 function onWordSelect(e) {
 	if(artiBpmfs.length <= 0) {
-		bpmfNode.textContent = '';
+		document.querySelector('#單字注音 .字母').textContent = '';
+		document.querySelector('#單字注音 .聲調').textContent = '';
 		return;
 	}
-	document.querySelector('#單字注音').textContent = artiBpmfs[e.target.index % artiBpmfs.length];
+	
+	var bpmf = artiBpmfs[e.target.index % artiBpmfs.length];
+	document.querySelector('#單字注音 .字母').textContent = bpmf.chara;
+	document.querySelector('#單字注音 .聲調').textContent = bpmf.tone;
 }
